@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="launcher" default="all">
+
+  <target name="all" depends="compile,jar" />
+      
+  <target name="compile">
+    <mkdir dir="./build" />
+    <javac srcdir="./src" destdir="./build" encoding="UTF-8" />
+  </target>
+
+  <target name="jar">
+    <jar basedir="./build" jarfile="Launcher.jar" manifest="MANIFEST" />
+  </target>
+
+</project>

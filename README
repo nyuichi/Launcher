@@ -1,0 +1,10 @@
+== Build
+$ ant
+
+== Install
+Move both Launcher.jar and resources directory together to the destination.
+
+== Execute
+Run following or just double click Launcher.jar
+$ java -jar Launcher.jar
+
