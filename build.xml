@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="launcher" default="all">
 
-  <target name="all" depends="compile,jar" />
+  <target name="all" depends="clean,compile,jar,run" />
       
   <target name="compile">
     <mkdir dir="./build" />
@@ -10,6 +10,14 @@
 
   <target name="jar">
     <jar basedir="./build" jarfile="Launcher.jar" manifest="MANIFEST" />
+  </target>
+
+  <target name="run">
+    <java jar="./Launcher.jar" fork="yes" maxmemory="512m" />
+  </target>
+
+  <target name="clean">
+    <delete dir="./build" />
   </target>
 
 </project>

@@ -1,0 +1,27 @@
+* Summary
+
+You can build and run the launcher just typing following command
+in the top directory.
+ $ ant
+Successfully built, the Launcher will be invoked automatically.
+
+You may use these commands for debug use:
+
+ + Build
+  $ ant build
+
+ + Make a jar
+  $ ant jar
+
+ + Run
+  Just double click Launcher.jar
+
+
+* Credit
+
+This launcher was developed by Yuichi 'wasabiz' Nishiwaki.
+
+Contact:
++ Twitter: @wasabiz
++ E-mail: ffiannkks at gmail.com
++ Blog: http://d.hatena.ne.jp/wasabiz
