@@ -102,7 +102,7 @@ class Thumbnail {
     public static final int width = 360;
     public static final int height = 240;
     public static final int step = 30;
-    public static final float dim = 0.7f;
+    public static final float dim = 0.5f;
 
     public Thumbnail(Image orig){
 	orig = orig.getScaledInstance(width, height, SCALE_SMOOTH);

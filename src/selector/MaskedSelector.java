@@ -40,6 +40,5 @@ public class MaskedSelector extends Selector {
 	BufferedImage image = (BufferedImage)super.getImage();
 	return image.getSubimage(mpoint.x-vborder,mpoint.y-hborder,
 				 width,min(height, bheight));
-	// FIXME そもそもbheightより小さい
     }
 }

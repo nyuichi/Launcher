@@ -85,7 +85,6 @@ class Launcher extends JPanel implements ActionListener, KeyListener {
     }
 
     protected void paintComponent(Graphics g){
-	// TODO
 	g.setColor(WHITE);
 	g.fillRect(0,0,width,height);
 

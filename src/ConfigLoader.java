@@ -28,6 +28,7 @@ public class ConfigLoader {
 	    this.games = new Game[w][h];
 
 	    for(int i=0;i<gamedirs.length;i++){
+		System.out.println("ConfigLoader: Processing...: "+gamedirs[i]);
 		File parent = gamedirs[i];
 		String title = parent.getName();
 		BufferedImage image
