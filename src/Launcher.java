@@ -90,5 +90,8 @@ class Launcher extends JPanel implements ActionListener, KeyListener {
 
 	Image i = this.selector.getImage();
 	g.drawImage(i, (width-i.getWidth(null))/2, 0, this);
+
+	// Credit
+	g.drawString("Powerd by Wasabiz", width-220, height-30);
     }
 }
