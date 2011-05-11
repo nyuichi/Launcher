@@ -33,7 +33,7 @@ public class ConfigLoader {
 		String title = parent.getName();
 		BufferedImage image
 		    = ImageIO.read(new File(parent, "thumb.jpg"));
-		String cmd = (new File(parent, "run")).getPath();
+		String cmd = (new File(parent, "run.bat")).getAbsolutePath();
 
 		this.games[i%w][i/w] = new Game(title, image, cmd);
 	    }
