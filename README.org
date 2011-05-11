@@ -110,4 +110,4 @@ This section describes the structure of the launcher.
   - Blog: http://d.hatena.ne.jp/wasabiz
 
 
-#+OPTION \n:t
+#+OPTIONS \n:t
