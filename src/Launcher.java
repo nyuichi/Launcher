@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
+import java.util.logging.*;
 import javax.swing.*;
 import static java.awt.Color.*;
 import static java.awt.event.KeyEvent.*;
@@ -8,6 +9,8 @@ import static java.awt.event.KeyEvent.*;
 import selector.*;
 
 class Launcher extends JPanel implements ActionListener, KeyListener {
+
+    private final Logger logger;
 
     private final ConfigLoader conf;
     private final Selector selector;
@@ -24,9 +27,15 @@ class Launcher extends JPanel implements ActionListener, KeyListener {
 
     public static final int fps = 60;
 
-    public Launcher() {
+    public Launcher() throws Exception {
 	super(true);
 	this.setFocusable(true);
+
+	// Logger
+	this.logger = Logger.getAnonymousLogger();
+	this.logger.addHandler(new FileHandler("launcher.log", true));
+	this.logger.getHandlers()[0].setFormatter(new SimpleFormatter());
+	this.logger.setLevel(Level.FINE);
 
 	// Fullscreen support
 	this.env     = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -71,13 +80,16 @@ class Launcher extends JPanel implements ActionListener, KeyListener {
 	int c = e.getKeyCode();
 	if(c == VK_ENTER){	// Execute
 	    this.device.setFullScreenWindow(null);
-	    String cmd = this.selector.games[selector.p.x][selector.p.y].cmd;
+	    String cmd = selector.games[selector.p.x][selector.p.y].cmd;
+	    this.logger.fine(selector.games[selector.p.x][selector.p.y].name);
+	    this.logger.fine("start");
 	    try{
 		Runtime.getRuntime().exec(cmd).waitFor();
 	    }catch(Exception ex){
 		JOptionPane.showMessageDialog(null, "実行できませんでした");
 		ex.printStackTrace();
 	    }
+	    this.logger.fine("end");
 	    this.device.setFullScreenWindow(frame);
 	}else if(c == VK_ESCAPE){ // Exit
 	    System.exit(0);

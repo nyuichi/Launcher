@@ -13,17 +13,20 @@ public class Game {
 
     private final Title title;
     private final Thumbnail thumb;
-    public final String cmd;
-
     private final BufferedImage image;
+
+    public final String name;
+    public final String cmd;
 
     public static final int width = 400;
     public static final int height = 360;
 
     public Game(String title, Image thumb, String cmd){
+	this.name  = title;
+	this.cmd   = cmd;
+
 	this.title = new Title(title);
 	this.thumb = new Thumbnail(thumb);
-	this.cmd   = cmd;
 	this.image = new BufferedImage(width, height, TYPE_INT_ARGB);
 
 	this.setFocused(false);
