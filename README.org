@@ -1,6 +1,3 @@
-
-_A Multi-Game Launcher_
-
 * Summary
 
   This launcher was written in order to make game exhibition at school festival
@@ -27,22 +24,22 @@ _A Multi-Game Launcher_
   When the launcher started, it scans /data/ directory first. data must have
   following structure:
 
-  data/
-    game1/
-      run.bat
-      thumb.jpg
-      something-relates-to-game-1
-      ...
-    game2/
-      run.bat
-      thumb.jpg
-      something-relates-to-game-2
-      ...
-    game3/
-      run.bat
-      thumb.jpg
-      something-relates-to-game-3
-      ...
+:  data/
+:    game1/
+:      run.bat
+:      thumb.jpg
+:      something-relates-to-game-1
+:      ...
+:    game2/
+:      run.bat
+:      thumb.jpg
+:      something-relates-to-game-2
+:      ...
+:    game3/
+:      run.bat
+:      thumb.jpg
+:      something-relates-to-game-3
+:      ...
 
   The directory name will be its game's title.
   All thumb.jpg's size must be 400x300.
@@ -97,6 +94,12 @@ This section describes the structure of the launcher.
    - Run
       $ ant run
 
+* Misc
+
+  The Launcher outputs the statistics of how many times each game was launched
+  and how long it was played in an encoding Shift-JIS, so you may better use
+  'iconv' to convert the encodings.
+
 * Credit
 
   This launcher was developed by Yuichi 'wasabiz' Nishiwaki.
@@ -105,3 +108,6 @@ This section describes the structure of the launcher.
   - Twitter: @wasabiz
   - E-mail: ffiannkks at gmail.com
   - Blog: http://d.hatena.ne.jp/wasabiz
+
+
+#+OPTION \n:t
