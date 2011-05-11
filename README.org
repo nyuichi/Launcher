@@ -1,27 +1,107 @@
+
+_A Multi-Game Launcher_
+
 * Summary
 
-You can build and run the launcher just typing following command
-in the top directory.
- $ ant
-Successfully built, the Launcher will be invoked automatically.
+  This launcher was written in order to make game exhibition at school festival
+  more gourgeous and decrease NPCA members' labor.
+  
+  Below are the main functions:
+  - Supports addition of games.
+  - Records the statistics how many times each game is launched.
+  
+* Requirements
 
-You may use these commands for debug use:
+  - Screen resolution: 1440x900
+  - Java SE Runtime 5
 
- + Build
-  $ ant build
+* Build
 
- + Make a jar
-  $ ant jar
+  You can build and run the launcher just typing following command
+  in the top directory.
+   $ ant
+  Successfully built, the Launcher will be invoked automatically.
+ 
+* Setup
 
- + Run
-  Just double click Launcher.jar
+  When the launcher started, it scans /data/ directory first. data must have
+  following structure:
 
+  data/
+    game1/
+      run.bat
+      thumb.jpg
+      something-relates-to-game-1
+      ...
+    game2/
+      run.bat
+      thumb.jpg
+      something-relates-to-game-2
+      ...
+    game3/
+      run.bat
+      thumb.jpg
+      something-relates-to-game-3
+      ...
+
+  The directory name will be its game's title.
+  All thumb.jpg's size must be 400x300.
+  Also, the launcher execute 'run.bat' to run that game. You must write
+  commands which launch the game with *absolute path* on the file run.bat.
+  Other files in each directory are just ignored. So you can place the body of
+  the game in each directory.
+  *Do not place something but accepted formed directories beneath data*.
+
+* Hacking
+
+This section describes the structure of the launcher.
+
+** Directory Structure
+
+   The necessary files to launch the launcher are just Launcher.jar and data
+   directory. You can remove those other files and directories once you have
+   built the launcher.
+
+   - README.org
+     This file.
+
+   - build.xml
+     The specification for ant.
+
+   - src/
+     This contains the all sources.
+
+   - MANIFEST
+     A file to make a jar.
+
+   - data/
+     This directory contains games. See /Setup/ section.
+
+   - Launcher.jar
+     The body of the launcher. This file will be created after build.
+
+   - build/
+     This directory will be created after build. Files under this are used only
+     to create the launcher.jar, so you can safely delete this directory if you
+     want.
+
+** Ant
+   
+   Ant is used as a MAKE system. Some options are defined beforehand.
+   - Build only
+      $ ant build
+   - Cleaning
+      $ ant clean
+   - Make a jar
+      $ ant jar
+   - Run
+      $ ant run
 
 * Credit
 
-This launcher was developed by Yuichi 'wasabiz' Nishiwaki.
+  This launcher was developed by Yuichi 'wasabiz' Nishiwaki.
 
-Contact:
-+ Twitter: @wasabiz
-+ E-mail: ffiannkks at gmail.com
-+ Blog: http://d.hatena.ne.jp/wasabiz
+  Contact:
+  - Twitter: @wasabiz
+  - E-mail: ffiannkks at gmail.com
+  - Blog: http://d.hatena.ne.jp/wasabiz
