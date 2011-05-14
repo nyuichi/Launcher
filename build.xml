@@ -18,6 +18,8 @@
 
   <target name="clean">
     <delete dir="./build" />
+    <delete file="./launcher.log" />
+    <delete file="./launcher.log.lck" />
   </target>
 
 </project>

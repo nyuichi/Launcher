@@ -1,3 +1,5 @@
 .DS_Store
 build/
 Launcher.jar
+launcher.log
+launcher.log.lck
